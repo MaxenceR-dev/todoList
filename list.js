@@ -6,7 +6,7 @@ function ajoutListenerNewList() {
     const listSection = document.querySelector("#list-section");
     const newListForm = document.createElement("div");
     newListForm.innerHTML =
-      "<form class='task-form'><input name='task' placeholder='Nouvelle tache' class='task-name'></input><input type='number' name='importance-task' placeholder='importance de votre tache' min='1' max='5'></input></br><button class='submit-task'>Nouvelle tache</button></form>";
+      "<input name='task' placeholder='Nouvelle tache' class='task-name'></input><input type='number' name='importance-task' placeholder='importance de votre tache' min='1' max='5'></input></br><button class='submit-task'>Nouvelle tache</button>";
     listSection.appendChild(newListForm);
   });
 }
@@ -14,7 +14,8 @@ function ajoutListenerNewList() {
 // Récupération des datas du formulaire + création de la tache
 function creationNewTask() {
   const btnNewTask = document.querySelector(".submit-task");
-  btnNewTask.addEventListener("click", function () {
+  btnNewTask.addEventListener("click", function (e) {
+    e.preventDefault();
     const nameTask = document.querySelector(".task-name");
     const importanceTask = document.querySelector(".importance-task");
     console.log(nameTask.value, importanceTask.value);
