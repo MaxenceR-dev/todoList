@@ -6,7 +6,7 @@ function ajoutListenerNewList() {
     const listSection = document.querySelector("#list-section");
     const newListForm = document.createElement("div");
     newListForm.innerHTML =
-      "<input name='task' placeholder='Nouvelle tache' class='task-name'></input><input type='number' name='importance-task' placeholder='importance de votre tache' min='1' max='5'></input></br><button class='submit-task'>Nouvelle tache</button>";
+      "<input type='text' name='task-name' placeholder='Nouvelle tache' class='task-name'></input><input type='number' name='importance-task' class='importance-task' placeholder='importance de votre tache' min='1' max='5'></input></br><button class='submit-task'>Nouvelle tache</button>";
     listSection.appendChild(newListForm);
   });
 }
